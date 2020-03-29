@@ -11,6 +11,7 @@ export default class BearListNav extends NavigationMixin(LightningElement) {
 @wire(CurrentPageReference) pageRef;
 @wire(searchBears, {searchTerm: '$searchTerm'})
 loadBears(result) {
+	console.log(result);
 	this.bears = result;
 	if (result.data) {
 		fireEvent(this.pageRef, 'bearListUpdate', result.data);
